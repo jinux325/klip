@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mybatis.dao.ConstructionDAO">
+
+ <!-- 	<select id="selectTaskConst"    resultMap="taskConst">
+    	SELECT *
+		FROM info_task_const	
+    </select> 
+     <resultMap id="taskConst"  type="mybatis.vo.TaskConstVO" >   			
+   			<association property="constructionVO" column="const_number" select="selectConst"  />
+   </resultMap>
+	<select id="selectConst" resultType="mybatis.vo.ConstructionVO" >
+    	SELECT *
+		FROM info_const 
+		 WHERE  number = #{id}
+    </select>
+ -->
+		<select id="selectConstruction"   resultType="mybatis.vo.ConstructionVO"  >
+	    	SELECT *
+			FROM info_const 	
+				<![CDATA[    
+		 	order by number desc
+		 	limit #{pageStart}, #{perPageNum}
+		 	]]>  	
+	    </select>      
+	  
+	   <select id="boardCountPaging" resultType="Int">
+	  <![CDATA[
+	      select count(number)    
+	        FROM info_const			
+	  ]]>
+   <!--  <include refid="search"></include> -->
+   </select> 
+     
+   
+</mapper>
