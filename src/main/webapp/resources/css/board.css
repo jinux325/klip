@@ -171,8 +171,8 @@
 /* brd_write2 */
 table.brd_write2 {position:relative; clear:both; width:100%;}
 table.brd_write2 input {font:normal 12px/1.2 "Nanum Gothic", Dotum, arial, Tahoma !important;}
-table.brd_write2 th {padding:10px 5px 5px 10px; font-weight:bold; color:#333; text-align:center;;}
-table.brd_write2 td {padding:3px 20px 3px 2px;}
+table.brd_write2 th {padding:5px 5px 5px 5px; font-weight:bold; color:#333; text-align:center;;}
+table.brd_write2 td {padding:3px 2px 3px 2px;}
 /* */
 table.brd_write2 td .bx_multi_inp {}
 table.brd_write2 td .bx_multi_inp .lf_40per {float:left; width:40%; padding-right:5px; box-sizing:border-box; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; -ms-box-sizing:border-box;}
@@ -188,7 +188,11 @@ table.brd_write2 td .inp_btn {position:relative; display:block;}
 table.brd_write2 td .inp_btn input {}
 table.brd_write2 td .inp_btn .btn_cal {display:inline-block; position:absolute; right:0; top:0; width:36px; height:30px; text-indent:-3000px; background:#8c8482 url("https://pj.genieaccount.com/images/common/ic_calendar.png") no-repeat center center;}
 
-
+table.brd_write2 tr {border: 1px solid;}
+table.brd_write2 th {border: 1px solid;}
+table.brd_write2 td {border: 1px solid;}
+table.brd_write2 input {text-align: center;}
+table.brd_write2 select, input {width: 100%;}
 
 /* telerik_input ==================================================*/
 /* telerik_input (text) */

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mybatis.dao.AccountDAO">
+
+	<!-- 시공 구분 정보 등록 -->
+	
+	
+	<!-- 시공 구분 정보 조회 -->
+	<select id="listAccount" resultType="mybatis.vo.AccountVO">
+		select * from info_account
+	</select>
+
+</mapper>

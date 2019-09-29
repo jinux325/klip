@@ -22,7 +22,7 @@ body {background:#ebe9e4;}
 /* rolling ==============================*/
 /* 슬라이드 텍스트 박스 */
 #mainWrap .main_tit_bx {*zoom:1;}
-#mainWrap .main_tit_bx:after {content:""; display:block; clear:both;} 
+#mainWrap .main_tit_bx:after {content:""; display:block; clear:both;}
 #mainWrap .main_tit_bx .main_tit {float:left;}
 
 #mainWrap .main_tit_bx .btn_qus {float:right; width:20px; height:20px; padding:10px; margin:12px 5px 0 0; text-indent:-9999em; background:url("https://pj.genieaccount.com/images/common/ic_help.png") center center no-repeat;}
@@ -183,7 +183,7 @@ body {background:#ebe9e4;}
 /* slide question ==============================*/
 /* tit */
 .dashboard_tit_bx {*zoom:1;}
-.dashboard_tit_bx:after {content:""; display:block; clear:both;} 
+.dashboard_tit_bx:after {content:""; display:block; clear:both;}
 .dashboard_tit_bx .tit_bdy1 {float:left;}
 /* btn */
 .dashboard_tit_bx .btn_qus {float:right; width:20px; height:20px; padding:10px; margin:0px 5px 0 0; text-indent:-9999em; background:url("https://pj.genieaccount.com/images/common/ic_help.png") center center no-repeat;}
@@ -237,14 +237,14 @@ body {background:#ebe9e4;}
 .search_box .search_btn.multi_btn .RadButton.sub_btn input.rbDecorated {padding:0 10px; background:#a09284;}
 
 /* 상세검색+ Case*/
-.btn_openline1 {position:relative;  float:initial; top:52px;  padding:5px; text-indent:-9999em;  background:url("https://pj.genieaccount.com/images/common/btn_detailsearch_op.gif") center center no-repeat;} 
-.btn_openline2 {position:relative;  float:initial; top:89px;  padding:5px; text-indent:-9999em;  background:url("https://pj.genieaccount.com/images/common/btn_detailsearch_op.gif") center center no-repeat;} 
+.btn_openline1 {position:relative;  float:initial; top:55px;  padding:5px; text-indent:-9999em;  background:url("https://pj.genieaccount.com/images/common/btn_detailsearch_op.gif") center center no-repeat;}
+.btn_openline2 {position:relative;  float:initial; top:89px;  padding:5px; text-indent:-9999em;  background:url("https://pj.genieaccount.com/images/common/btn_detailsearch_op.gif") center center no-repeat;}
 .btn_openline3 {position:relative;  float:initial; top:127px;  padding:5px; text-indent:-9999em;  background:url("https://pj.genieaccount.com/images/common/btn_detailsearch_op.gif") center center no-repeat;}
 
 /* 상세검색- Case*/
 .btn_closeline1 {position:relative;  float:initial; top:55px;  padding:5px; text-indent:-9999em;  background:url("https://pj.genieaccount.com/images/common/btn_detailsearch_cl.gif") center center no-repeat;}
 .btn_closeline2 {position:relative;  float:initial; top:91px;  padding:5px; text-indent:-9999em;  background:url("https://pj.genieaccount.com/images/common/btn_detailsearch_cl.gif") center center no-repeat;}
-.btn_closeline3 {position:relative;  float:initial; top:122px;  padding:5px; text-indent:-9999em;  background:url("https://pj.genieaccount.com/images/common/btn_detailsearch_cl.gif") center center no-repeat;}
+.btn_closeline3 {position:relative;  float:initial; top:127px;  padding:5px; text-indent:-9999em;  background:url("https://pj.genieaccount.com/images/common/btn_detailsearch_cl.gif") center center no-repeat;}
 .btn_closeline4 {position:relative;  float:initial; top:163px;  padding:5px; text-indent:-9999em;  background:url("https://pj.genieaccount.com/images/common/btn_detailsearch_cl.gif") center center no-repeat;}
 .btn_closeline5 {position:relative;  float:initial; top:199px;  padding:5px; text-indent:-9999em;  background:url("https://pj.genieaccount.com/images/common/btn_detailsearch_cl.gif") center center no-repeat;}
 .btn_closeline6 {position:relative;  float:initial; top:235px;  padding:5px; text-indent:-9999em;  background:url("https://pj.genieaccount.com/images/common/btn_detailsearch_cl.gif") center center no-repeat;}
@@ -256,7 +256,7 @@ body {background:#ebe9e4;}
 .btn_addcolumn3 {position:relative; float:initial; top:138px; text-indent:-9999em;}
 
 /*크롬, 사파리 핵*/
-@media screen and (-webkit-min-device-pixel-ratio:0) 
+@media screen and (-webkit-min-device-pixel-ratio:0)
 {
 .btn_addcolumn {position:relative; float:initial; top:78px; text-indent:-9999em;}
 .btn_addcolumnadjst {position:relative; float:initial; top:76px; text-indent:-9999em;}
@@ -330,7 +330,7 @@ span.btn_ty7 input {height:41px; line-height:37px; padding:0 20px; font-size:1.8
 /* 본문 */
 .pop_wrap .pop_head {padding:0 20px; color:#FFF; background:#997149;}
 .pop_wrap .pop_head .tit {padding:14px 0 14px 10px; font-size:1.154em; font-weight:bold; background:url("https://pj.genieaccount.com/images/common/pop_tit_ic.png") no-repeat 0 16px;}
-.pop_wrap .pop_contents {padding:20px; min-height:300px; margin-bottom:20px;}
+.pop_wrap .pop_contents {padding:20px; min-height:300px; margin-bottom:100px;}
 .pop_wrap .pop_contents.small {min-height:90px;}
 .pop_wrap.non_footer .pop_contents {margin-bottom:0px;}
 .pop_wrap .pop_contents_in {padding:10px;}
@@ -472,7 +472,7 @@ table.rwTable tbody tr.rwTitleRow td.rwTitlebar {background:#FFF; border-bottom:
 .rfdFieldset fieldset {border:0px !important; background:none !important;}
 .pop_wrap table.telerik_radio  td {height:26px; line-height:1.2; border-bottom:none !important; vertical-align:middle !important; background-color:transparent !important;}
 /* selectbox - 옵션 목록 */
-.rcbSlide, 
+.rcbSlide,
 .rddlSlide {background:#FFF;}
 /* editor==========*/
 div.RadEditor {width:115%; margin-left:-40px; background:#FFF !important; border:none !important;}

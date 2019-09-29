@@ -2,8 +2,10 @@ package com.erp.klip;
 
 import java.text.DateFormat;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -13,17 +15,19 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
-import mybatis.dao.CompDAO;
-import mybatis.dao.ConstructionDAO;
-import mybatis.vo.CompVO;
-import mybatis.vo.ConstructionVO;
-import mybatis.vo.PageMaker;
-import mybatis.vo.SearchCriteria;
-import mybatis.vo.TaskConstVO;
+import mybatis.dao.AccountDAO;
+import mybatis.dao.ListBuildDAO;
+import mybatis.dao.ListCnstrDAO;
+import mybatis.dao.ListCntrcDAO;
+import mybatis.dao.ListCompDAO;
+import mybatis.dao.ListDeptDAO;
+import mybatis.dao.ListManagerDAO;
+import mybatis.dao.ListTeamDAO;
+import mybatis.vo.ListManagerVO;
 
 /**
  * Handles requests for the application home page.
@@ -55,57 +59,43 @@ public class HomeController {
 		
 		return "home";
 	}
-	
-	@RequestMapping(value = "/main", method = RequestMethod.GET)
-	public String main(Locale locale, Model model) throws Exception {
-		logger.info("Welcome home! The client locale is {}.", locale);
 		
-		CompDAO dao = sqlsessonTemplate.getMapper(CompDAO.class);
-		List<CompVO> list = dao.listComp();
+	@RequestMapping(value = "/popup", method = RequestMethod.GET)
+	public String popup(Model model) throws Exception {		
 		
-		if (list != null && list.size() > 0) {
-			request.setAttribute("list", list);
-		}
+		ListDeptDAO listDeptDAO = sqlsessonTemplate.getMapper(ListDeptDAO.class);
+		ListTeamDAO listTeamDAO = sqlsessonTemplate.getMapper(ListTeamDAO.class);
+		ListCompDAO listCompDAO = sqlsessonTemplate.getMapper(ListCompDAO.class);
+		ListCntrcDAO listCntrcDAO = sqlsessonTemplate.getMapper(ListCntrcDAO.class);
+		ListCnstrDAO listCnstrDAO = sqlsessonTemplate.getMapper(ListCnstrDAO.class);
+		ListBuildDAO listBuildDAO = sqlsessonTemplate.getMapper(ListBuildDAO.class);
 		
-		return "main";
+		AccountDAO accountDAO = sqlsessonTemplate.getMapper(AccountDAO.class);
+		
+		model.addAttribute("listTeam", listTeamDAO.listTeam());
+		model.addAttribute("listComp", listCompDAO.listCompDivision());
+		model.addAttribute("listCntrc", listCntrcDAO.listCntrcDivision());
+		model.addAttribute("listCnstr", listCnstrDAO.listCnstrDivision());
+		model.addAttribute("listBuild", listBuildDAO.listBuildDivision());
+		
+		return "popup";
 	}
-	@RequestMapping(value = "/constructionMain", method = RequestMethod.GET)
-	public String constMain(@ModelAttribute("cri") SearchCriteria cri, Locale locale, Model model) throws Exception {
-		//logger.info("Welcome home! The client locale is {}.", locale);
-		
-		ConstructionDAO  dao = sqlsessonTemplate.getMapper(ConstructionDAO.class);
-		//List<ConstructionVO> list = dao.selectConstruction();
-		//List<TaskConstVO> list = dao.selectTaskConst();
-
-		//model.addAttribute("list",list);
-		
-		model.addAttribute("list", dao.selectConstruction(cri));
-		/*ModelAndView view = new ModelAndView();
-
-
-
-		view.addObject("list", dao.boardlistSearch(cri));
-		*/
-		PageMaker pageMaker = new  PageMaker();
-		pageMaker.setCri(cri);
 	
-		pageMaker.setTotalCount(dao.boardCountPaging(cri));
+	@RequestMapping(value = "/ajax/getManagerList", method = RequestMethod.GET)
+	@ResponseBody
+	public Map<String, Object> getManagerList(HttpServletRequest request) throws Exception {		
 		
-		System.out.println("@@@@@@@@@ "+pageMaker.getEndPage());
-		System.out.println("@@@@@@@@@ "+pageMaker.getStartPage());
+		String key = request.getParameter("key");
+		logger.info("request : " + key);
 		
-		if(pageMaker.isNext()) {
-			System.out.println("@@@@@@@@@ "+ "다음 버튼");
-		}
-		if(pageMaker.isPrev()) {
-			System.out.println("@@@@@@@@@ "+ "전 버튼");
-		}
-		
-		//view.addObject("pageMaker", pageMaker);
-		model.addAttribute("pageMaker", pageMaker);	
-		
-		
-		
-		return "constructionMain";
+		ListManagerDAO listManagerDAO = sqlsessonTemplate.getMapper(ListManagerDAO.class);
+		List<ListManagerVO> list = listManagerDAO.listManager(key);
+				
+		Map<String, Object> retVal = new HashMap<String, Object>();
+	    retVal.put("listManager", list); //bookList란 키로 bookList의 값을 넣어줍니다. (웹에서 bookList키로 추출
+	    retVal.put("code", "OK");
+	    
+		return retVal;
 	}
+	
 }

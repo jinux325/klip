@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mybatis.dao.ListManagerDAO">
+
+	<!-- 부서 정보 등록 -->
+	
+	
+	<!-- 부서 정보 조회 -->
+	<select id="listManager" parameterType="String" resultType="mybatis.vo.ListManagerVO">
+		select * from list_manager
+		where team_id = ${value}
+	</select>
+
+</mapper>
