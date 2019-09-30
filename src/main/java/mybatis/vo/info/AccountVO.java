@@ -1,7 +1,7 @@
-package mybatis.vo;
+package mybatis.vo.info;
 
 import lombok.Data;
-import mybatis.vo.AccountVO;
+import mybatis.vo.info.AccountVO;
 
 @Data
 public class AccountVO {

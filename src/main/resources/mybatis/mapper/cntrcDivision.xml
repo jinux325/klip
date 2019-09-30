@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mybatis.dao.info.CntrcDivisionDAO">
+
+	<!-- 계약 구분 정보 등록 -->
+	<insert id="addCntrcDivision" useGeneratedKeys="true" keyProperty="id" parameterType="mybatis.vo.info.CntrcDivisionVO">
+		insert into info_cntrc_division (cntrc_number, division, ratio, team_id)
+		values (#{cntrc_number}, #{division}, #{ratio}, #{team_id})
+	</insert>
+	
+	<!-- 계약 구분 정보 조회 -->
+	<select id="listCntrcDivision" resultType="mybatis.vo.info.CntrcDivisionVO">
+		select * from info_cntrc_division
+	</select>
+
+</mapper>

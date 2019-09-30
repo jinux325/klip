@@ -11,9 +11,6 @@ public class ListTeamVO {
 	// 부서 ID
 	private int dept_id;
 	
-	// key
-	private int key;
-	
 	// 팀명
 	private String name;
 	

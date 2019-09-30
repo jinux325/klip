@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mybatis.dao.info.CntrcDAO">
+
+	<!-- 계약 정보 등록 -->
+	<insert id="addCntrc" useGeneratedKeys="true" keyProperty="number" parameterType="mybatis.vo.info.CntrcVO">
+		insert into info_cntrc (number, cnstr_number, cntrc_division, enterprise, amount, regdate)
+		values (#{number}, #{cnstr_number}, #{cntrc_division}, #{enterprise}, #{amount}, #{regdate})
+	</insert>
+	
+	<!-- 계약 정보 조회 -->
+	<select id="listCntrc" resultType="mybatis.vo.info.CntrcVO">
+		select * from info_cntrc
+	</select>
+
+	<!-- 계약 번호 설정 -->
+	<select id="getCntrcNumber" parameterType="String" resultType="Integer">
+		select count(*) from info_cntrc
+		where number LIKE CONCAT(#{number}, "%")
+	</select>
+	
+</mapper>

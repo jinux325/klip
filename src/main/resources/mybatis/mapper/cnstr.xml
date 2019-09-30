@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mybatis.dao.info.CnstrDAO">
+
+	<!-- 공사 정보 등록 -->
+	<insert id="addCnstr" useGeneratedKeys="true" keyProperty="number" parameterType="mybatis.vo.info.CnstrVO">
+		insert into info_cnstr (number, name, cnstr_division, build_division, comp_division, supervisor_id, ratio_bid, ratio_run, check_bring, start_date, end_date, manager_id)
+		values (#{number}, #{name}, #{cnstr_division}, #{build_division}, #{comp_division}, #{supervisor_id}, #{ratio_bid}, #{ratio_run}, #{check_bring}, #{start_date}, #{end_date}, #{manager_id})
+	</insert>
+	
+	<!-- 공사 정보 조회 -->
+	<select id="listCnstr" resultType="mybatis.vo.info.CnstrVO">
+		select * from info_cnstr
+	</select>
+
+</mapper>

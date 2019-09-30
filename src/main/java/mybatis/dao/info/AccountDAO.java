@@ -1,11 +1,11 @@
-package mybatis.dao;
+package mybatis.dao.info;
 
 import java.util.List;
 
 import org.springframework.stereotype.Component;
 
-import mybatis.dao.AccountDAO;
-import mybatis.vo.AccountVO;
+import mybatis.dao.info.AccountDAO;
+import mybatis.vo.info.AccountVO;
 
 @Component
 public interface AccountDAO {

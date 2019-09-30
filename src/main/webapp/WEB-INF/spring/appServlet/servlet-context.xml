@@ -11,6 +11,11 @@
 	
 	<!-- Enables the Spring MVC @Controller programming model -->
 	<annotation-driven />
+	
+	<beans:bean id="jsonView" class="org.springframework.web.servlet.view.json.MappingJackson2JsonView">
+		<beans:property name="contentType" value="application/json; charset=UTF-8"/>
+ 		<!-- <beans:property name="contentType" value="text/html; charset=UTF-8"/> -->
+	</beans:bean>
 
 	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
 	<resources mapping="/resources/**" location="/resources/" />
@@ -22,6 +27,7 @@
 	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<beans:property name="prefix" value="/WEB-INF/views/" />
 		<beans:property name="suffix" value=".jsp" />
+		<beans:property name="contentType" value="text/html; charset=UTF-8" />
 	</beans:bean>
 	
 	<context:component-scan base-package="com.erp.klip" />
