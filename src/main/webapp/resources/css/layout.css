@@ -89,12 +89,14 @@ body {background:#ebe9e4;}
 #header #gnb ul.util li {float:left; margin-right:10px;}
 
 /* top navigation ==============================*/
-#navWrap {clear:both; position:relative; z-index:10; min-width:1280px; height:60px; background:#997149;}
-#nav {width:1040px; height:60px; margin-left:240px;}
+#navWrap {clear:both; position:relative; z-index:10; min-width:280px; height:72px; background:#997149;}
+#nav {width:100%; height:70px; margin-left:0px;}
 #nav.cate6 > li {float:left; position:relative; width:16.6%;}
-#nav > li {float:left; position:relative; width:20%;}
+#nav > li {float:left; position:relative; width:5.8%;}
 #nav > li span {cursor:pointer;}
-#nav > li > span {display:block; height:60px; line-height:56px; font-size:1.385em; font-weight:bold; color:#FFF; text-align:center;}
+#nav > li a {cursor:pointer;}
+#nav > li > span {display:block; padding-top:9px; height:63px; line-height:22px; font-size:1.085em; font-weight:bold; color:#FFF; text-align:center;}
+#nav > li > a {display:block; padding-top:9px; height:63px; line-height:22px; font-size:1.085em; font-weight:bold; color:#FFF; text-align:center;}
 #nav > li > ul {display: none; position:absolute; z-index:1; width:100%; background:#cfcaba;}
 #nav > li.on > span {background:#4d341b;}
 #nav > li.on > ul {}
@@ -226,7 +228,7 @@ body {background:#ebe9e4;}
 .search_box .search_brd.src_ty2 {width:500px;}
 .search_box .search_brd.src_ty3 {width:700px;}
 .search_box .search_brd.src_ty4 {width:820px;}
-.search_box .search_btn {float:left; margin:3px 0 0 -10px;}
+.search_box .search_btn {float:left; margin:3px ;}
 .search_box .search_btn .RadButton {position:absolute; bottom:23px; height:auto !important; padding:0 !important; }
 .search_box .search_btn .RadButton input.rbDecorated {height:30px; line-height:30px; padding:0 30px; border:0; color:#FFF; background:#e6a15c;}
 /* 서브버튼 */

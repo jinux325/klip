@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mybatis.dao.ConstructionDAO">
+
+ <!-- 	<select id="selectTaskConst"    resultMap="taskConst">
+    	SELECT *
+		FROM info_task_const	
+    </select> 
+     <resultMap id="taskConst"  type="mybatis.vo.TaskConstVO" >   			
+   			<association property="constructionVO" column="const_number" select="selectConst"  />
+   </resultMap>
+	<select id="selectConst" resultType="mybatis.vo.ConstructionVO" >
+    	SELECT *
+		FROM info_const 
+		 WHERE  number = #{id}
+    </select>
+ -->
+		<select id="selectConstruction"   resultType="mybatis.vo.ConstructionVO"  >
+	    	SELECT *
+			FROM info_const 	
+				<![CDATA[    
+		 	order by number desc
+		 	limit #{pageStart}, #{perPageNum}
+		 	]]>  	
+	    </select>    
+	    
+	    	<select id="filter"   resultType="mybatis.vo.ConstructionVO"  >
+	    	<![CDATA[    
+	    	SELECT *
+			FROM info_const 
+			where const_day = #{const_day}
+				
+		 	
+		 	]]>  	
+	    </select>    
+	    
+	    <select id="filterCount"   resultType="int"  >
+	    	<![CDATA[    
+	    	SELECT count(const_day)
+			FROM info_const 
+			where const_day = 10
+				
+		 	
+		 	]]>  	
+	    </select>    
+	       <select id="filterCount1"   resultType="int"  >
+	    	<![CDATA[    
+	    	SELECT count(const_day)
+			FROM info_const 
+			where const_day = 10				 	
+		 	]]>  	
+	    </select>    
+	    
+	        <select id="filterCount2"   resultType="int"  >
+	    	<![CDATA[    
+	    	SELECT count(const_day)
+			FROM info_const 
+			where const_day = 11				 	
+		 	]]>  	
+	    </select>    
+	    
+	        <select id="filterCount3"   resultType="int"  >
+	    	<![CDATA[    
+	    	SELECT count(const_day)
+			FROM info_const 
+			where const_day = 12			 	
+		 	]]>  	
+	    </select>    
+	    
+	        <select id="filterCount4"   resultType="int"  >
+	    	<![CDATA[    
+	    	SELECT count(const_day)
+			FROM info_const 
+			where const_day = 13				 	
+		 	]]>  	
+	    </select>    
+	    
+	        <select id="filterCount5"   resultType="int"  >
+	    	<![CDATA[    
+	    	SELECT count(const_day)
+			FROM info_const 
+			where const_day = 14				 	
+		 	]]>  	
+	    </select>    
+	    
+	        <select id="filterCount6"   resultType="int"  >
+	    	<![CDATA[    
+	    	SELECT count(const_day)
+			FROM info_const 
+			where const_day = 15				 	
+		 	]]>  	
+	    </select>    
+	    <select id="filterCount7"   resultType="int"  >
+	    	<![CDATA[    
+	    	SELECT count(const_day)
+			FROM info_const 
+			where const_day = 16				 	
+		 	]]>  	
+	    </select>    
+	    <select id="filterCount8"   resultType="int"  >
+	    	<![CDATA[    
+	    	SELECT count(const_day)
+			FROM info_const 
+			where const_day = 17				 	
+		 	]]>  	
+	    </select>    
+	     <select id="filterCount9"   resultType="int"  >
+	    	<![CDATA[    
+	    	SELECT count(const_day)
+			FROM info_const 
+			where const_day = 18				 	
+		 	]]>  	
+	    </select>    
+	     <select id="filterCount10"   resultType="int"  >
+	    	<![CDATA[    
+	    	SELECT count(const_day)
+			FROM info_const 
+			where const_day = 19				 	
+		 	]]>  	
+	    </select>    
+	     <select id="filterCount11"   resultType="int"  >
+	    	<![CDATA[    
+	    	SELECT count(const_day)
+			FROM info_const 
+			where const_day = 20				 	
+		 	]]>  	
+	    </select>
+	    <select id="filterCount12"   resultType="int"  >
+	    	<![CDATA[    
+	    	SELECT count(const_day)
+			FROM info_const 
+			where const_day = 21				 	
+		 	]]>  	
+	    </select> 
+	    <select id="filterCount13"   resultType="int"  >
+	    	<![CDATA[    
+	    	SELECT count(const_day)
+			FROM info_const 
+			where const_day = 22				 	
+		 	]]>  	
+	    </select> 
+	    <select id="filterCount14"   resultType="int"  >
+	    	<![CDATA[    
+	    	SELECT count(const_day)
+			FROM info_const 
+			where const_day = 23				 	
+		 	]]>  	
+	    </select> 
+	    <select id="filterCount15"   resultType="int"  >
+	    	<![CDATA[    
+	    	SELECT count(const_day)
+			FROM info_const 
+			where const_day = 24				 	
+		 	]]>  	
+	    </select> 
+	    <select id="filterCount16"   resultType="int"  >
+	    	<![CDATA[    
+	    	SELECT count(const_day)
+			FROM info_const 
+			where const_day = 25				 	
+		 	]]>  	
+	    </select> 
+	    <select id="filterCount17"   resultType="int"  >
+	    	<![CDATA[    
+	    	SELECT count(const_day)
+			FROM info_const 
+			where const_day = 26				 	
+		 	]]>  	
+	    </select>     
+	  	<select id="allList"   resultType="mybatis.vo.ConstructionVO"  >
+	    	<![CDATA[    
+	    	SELECT *
+			FROM info_const 
+				
+		 	
+		 	]]>  	
+	    </select>    
+	    
+	    
+	   <select id="boardCountPaging" resultType="Int">
+	  <![CDATA[
+	      select count(number)    
+	        FROM info_const			
+	  ]]>
+   <!--  <include refid="search"></include> -->
+   </select> 
+     
+   
+</mapper>

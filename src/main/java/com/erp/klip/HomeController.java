@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import mybatis.dao.ConstructionDAO;
 import mybatis.dao.ListBuildDAO;
 import mybatis.dao.ListCnstrDAO;
 import mybatis.dao.ListCntrcDAO;
@@ -34,6 +35,7 @@ import mybatis.dao.info.CnstrStatusDAO;
 import mybatis.dao.info.CntrcDAO;
 import mybatis.dao.info.CntrcDivisionDAO;
 import mybatis.dto.InsertDTO;
+import mybatis.vo.Filter;
 import mybatis.vo.ListManagerVO;
 import mybatis.vo.info.CnstrStatusVO;
 import mybatis.vo.info.CnstrVO;
@@ -237,5 +239,49 @@ public class HomeController {
 		
 		return retVal;
 	}
+	
+	@RequestMapping(value = "/filter", method = RequestMethod.GET)
+	// @ResponseBody
+	public String filter(Filter filter, Locale locale, Model model) throws Exception {
+		// logger.info("Welcome home! The client locale is {}.", locale);
+
+		ConstructionDAO dao = sqlsessonTemplate.getMapper(ConstructionDAO.class);
+
+		System.out.println("filter 단계");
+		model.addAttribute("count", dao.filterCount(filter));
+		
+		int countAll = dao.filterCount1();
+		System.out.println("  @@ "+ countAll);
+		
+		model.addAttribute("count1", dao.filterCount1());
+		model.addAttribute("count2", dao.filterCount2());
+		model.addAttribute("count3", dao.filterCount3());
+		model.addAttribute("count4", dao.filterCount4());
+		model.addAttribute("count5", dao.filterCount5());
+		model.addAttribute("count6", dao.filterCount6());
+		model.addAttribute("count7", dao.filterCount7());
+		model.addAttribute("count8", dao.filterCount8());
+		model.addAttribute("count9", dao.filterCount9());
+		model.addAttribute("count10", dao.filterCount10());
+		model.addAttribute("count11", dao.filterCount11());
+		model.addAttribute("count12", dao.filterCount12());
+		model.addAttribute("count13", dao.filterCount13());
+		model.addAttribute("count14", dao.filterCount14());
+		model.addAttribute("count15", dao.filterCount15());
+		model.addAttribute("count16", dao.filterCount16());
+		model.addAttribute("count17", dao.filterCount17());
+		
+		model.addAttribute("list", dao.filter(filter));
+		
+		
+		
+		model.addAttribute("filter", filter);
+		
+
+		return "filter";
+	}
+	
+	
+	
 	
 }
