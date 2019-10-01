@@ -16,4 +16,7 @@ public class CnstrStatusVO {
 	// 작성일
 	private String regdate;
 	
+	private CnstrVO cnstrvo;
+	
+	
 }

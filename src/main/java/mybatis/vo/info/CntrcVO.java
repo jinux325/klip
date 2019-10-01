@@ -14,7 +14,7 @@ public class CntrcVO {
 	// 계약 업체
 	private String enterprise;
 	// 계약 금액
-	private int amount;
+	private long amount;
 	// 작성일
 	private String regdate;
 	

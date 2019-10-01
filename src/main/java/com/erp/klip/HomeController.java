@@ -248,7 +248,7 @@ public class HomeController {
 		ConstructionDAO dao = sqlsessonTemplate.getMapper(ConstructionDAO.class);
 
 		System.out.println("filter 단계");
-		model.addAttribute("count", dao.filterCount(filter));
+		//model.addAttribute("count", dao.filterCount(filter));
 		
 		int countAll = dao.filterCount1();
 		System.out.println("  @@ "+ countAll);

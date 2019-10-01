@@ -788,14 +788,23 @@
                                                                     </colgroup>
                                                                     <thead>                                                                       
                                                                         <tr>
-                                                                            <th scope="col" class="rgHeader" style="white-space:nowrap;">계약번호</th>	                                                                        	
+                                                                            <th scope="col" class="rgHeader" style="white-space:nowrap;">업체</th>	                                                                        	
                                                                         	<!-- <th scope="col" class="rgHeader" style="white-space:nowrap;">업체명</th>	 -->																			
-																			<th scope="col" class="rgHeader" style="white-space:nowrap;">공사번호</th>	
-																			<th scope="col" class="rgHeader" style="white-space:nowrap;">공사명</th>																																						
+																			<th scope="col" class="rgHeader" style="white-space:nowrap;">구분</th>	
+																			<th scope="col" class="rgHeader" style="white-space:nowrap;">계약번호</th>																																						
 																			<!-- <th scope="col" class="rgHeader" style="white-space:nowrap;">공정관리</th> -->
-																			<th scope="col" class="rgHeader" style="white-space:nowrap;">공사기간</th>
-																			<th scope="col" class="rgHeader" style="white-space:nowrap;">계약일</th>
+																			<th scope="col" class="rgHeader" style="white-space:nowrap;">공사번호</th>
+																			<th scope="col" class="rgHeader" style="white-space:nowrap;">공사명</th>
 																			<th scope="col" class="rgHeader" style="white-space:nowrap;">계약금액</th>
+																			<th scope="col" class="rgHeader" style="white-space:nowrap;">감독</th>
+																			<th scope="col" class="rgHeader" style="white-space:nowrap;">작업구분</th>
+																			<th scope="col" class="rgHeader" style="white-space:nowrap;">업무담당자</th>
+																			<th scope="col" class="rgHeader" style="white-space:nowrap;">공정관리</th>
+																			<th scope="col" class="rgHeader" style="white-space:nowrap;">공정작성일</th>
+																			<th scope="col" class="rgHeader" style="white-space:nowrap;">시공완료일</th>
+																			<th scope="col" class="rgHeader" style="white-space:nowrap;">자재</th>
+																			<th scope="col" class="rgHeader" style="white-space:nowrap;">시공</th>
+																			<th scope="col" class="rgHeader" style="white-space:nowrap;">사진</th>
 																		</tr>
                                                                     </thead>
                                                                     <tfoot  style="background-color: #AE905E">
@@ -846,13 +855,46 @@
 																	              	<td class="col_ct">${value.constructionVO.const_day }</td>
 																	              	<td class="col_ct">${value.constructionVO.contract_amount }</td>
 																	              	<td class="col_ct">${value.content }</td>  --%>
-																	               	<td  class="col_ct">${value.contract_number }</td>				
 																		            <!-- <td>  </td> -->
-																		            <td class="col_ct">${value.number }</td>
-																	              	<td class="col_ct">${value.name }</td>	
-																	              	<td class="col_ct">${value.const_day }</td>
-																	              	<td class="col_ct">${value.contract_date }</td>																	              	
-																	              	<td class="col_ct">${value.contract_amount }</td>
+																		            <td class="col_ct">${value.cnstrvo.cntrcvo.enterprise }</td>
+																		            <td class="col_ct">단가</td>
+																		            <td class="col_ct">${value.cnstrvo.cntrcvo.number }</td>
+																		            <td class="col_ct">${value.cnstrvo.cntrcvo.cnstr_number }</td>
+																		            <td class="col_ct">${value.cnstrvo.name }</td>
+																		            <td class="col_ct">${value.cnstrvo.cntrcvo.amount }</td>
+																		            <td class="col_ct">감독</td>
+																		            <td class="col_ct">작업구분(가공 등)</td>
+																		            <td class="col_ct">업무담당자</td>
+																		            <td class="col_ct">${value.status }</td>
+																		            <td class="col_ct">${value.regdate }</td>
+																		            <td class="col_ct">시공완료일</td>
+																		            <td class="col_ct">0%</td>
+																		            <td class="col_ct">0%</td>
+																		            <td class="col_ct">0%</td>
+																		            
+																		            
+																		            
+																		       <%--      
+																		            <td class="col_ct">${value.cnstr_number }</td>
+																	              	<td class="col_ct">${value.manager_id }</td>	
+																	              	<td class="col_ct">${value.status }</td>
+																	              	<td class="col_ct">${value.regdate }</td>
+																					<td class="col_ct">다음이 데이터</td>
+																	              	<td class="col_ct">${value.cnstrvo.number }</td>
+																	              	<td class="col_ct">${value.cnstrvo.name }</td>
+																	              	<td class="col_ct">${value.cnstrvo.start_date }</td>
+																	              	<td class="col_ct">${value.cnstrvo.end_date }</td>
+																	              	<td class="col_ct">${value.cnstrvo.regdate }</td>
+																	              	<td class="col_ct">다음이 데이터</td>
+																	              	<td class="col_ct">${value.cnstrvo.cntrcvo.number }</td>
+																	              	<td class="col_ct">${value.cnstrvo.cntrcvo.cnstr_number }</td>
+																	              	<td class="col_ct">${value.cnstrvo.cntrcvo.cntrc_division }</td>
+																	              	<td class="col_ct">${value.cnstrvo.cntrcvo.enterprise }</td>
+																	              	<td class="col_ct">${value.cnstrvo.cntrcvo.amount }</td> --%>
+																	              	
+																	              	
+																	              												              	
+																	              	<%-- <td class="col_ct">${value.contract_amount }</td> --%>
 																	           
 																	              	
 																  <%--           <c:if test="${value.contract != null}" >

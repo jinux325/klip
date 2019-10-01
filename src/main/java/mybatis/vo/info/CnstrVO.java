@@ -1,5 +1,7 @@
 package mybatis.vo.info;
 
+import java.util.List;
+
 import lombok.Data;
 
 @Data
@@ -32,4 +34,7 @@ public class CnstrVO {
 	// 작성일
 	private String regdate;
 	
+
+	private CntrcVO cntrcvo;
+		
 }

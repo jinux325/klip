@@ -17,7 +17,35 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		FROM info_const 
 		 WHERE  number = #{id}
     </select>
+ 
  -->
+ 
+		  <resultMap id="Cnstr" type="mybatis.vo.info.CnstrStatusVO" >
+		   			<association property="cnstrvo" column="cnstr_number" select="selectCnstr"  />
+		   </resultMap>
+		   
+		   <resultMap id="Cntrc" type="mybatis.vo.info.CnstrVO" >
+		   			<association property="cntrcvo" column="number" select="selectCntrc"  />
+		   </resultMap>
+		   
+ 		<select id="selectCnstrStatus" resultType="mybatis.vo.info.CnstrStatusVO" resultMap="Cnstr">
+	    	SELECT *
+			FROM info_cnstr_status
+	    </select>
+	    
+	 	<select id="selectCnstr" resultType="mybatis.vo.info.CnstrVO"  resultMap="Cntrc" >
+	    	SELECT *
+			FROM info_cnstr
+			 WHERE number = #{id}
+	    </select>
+	    
+ 		<select id="selectCntrc" resultType="mybatis.vo.info.CntrcVO"  >
+	    	SELECT *
+			FROM info_cntrc
+			 WHERE  cnstr_number = #{id}
+	    </select>
+ 
+ <!-- 
 		<select id="selectConstruction"   resultType="mybatis.vo.ConstructionVO"  >
 	    	SELECT *
 			FROM info_const 	
@@ -26,18 +54,70 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		 	limit #{pageStart}, #{perPageNum}
 		 	]]>  	
 	    </select>    
-	    
-	    	<select id="filter"   resultType="mybatis.vo.ConstructionVO"  >
+	     -->
+	    	<select id="filter"   resultType="mybatis.vo.info.CnstrStatusVO" resultMap="Cnstr" >
 	    	<![CDATA[    
 	    	SELECT *
-			FROM info_const 
-			where const_day = #{const_day}
+			FROM  info_cnstr_status		
+			 
 				
 		 	
-		 	]]>  	
+		 	]]>
+		 	<if test="keyword != null">
+		 		<if test="keyword == '전체공사'	">	 
+				</if>
+				<if test="keyword == '시공대기'	">						 
+						WHERE status = '시공대기'	 
+				</if>
+				<if test="keyword == '장기미결'	">						 
+						WHERE status = '장기미결'	 
+				</if>
+				<if test="keyword == '공사취소'	">						 
+						WHERE status = '공사취소'	 
+				</if>
+				<if test="keyword == '굴착대기'	">						 
+						WHERE status = '굴착대기'	 
+				</if>
+				<if test="keyword == '시공중'	">						 
+						WHERE status = '시공중'	 
+				</if>
+				<if test="keyword == '설계변경'	">						 
+						WHERE status = '설계변경'	 
+				</if>
+				<if test="keyword == '시공완료'	">						 
+						WHERE status = '시공완료'	 
+				</if>
+				<if test="keyword == '환입대기'	">						 
+						WHERE status = '환입대기'	 
+				</if>
+				<if test="keyword == '자재대기'	">						 
+						WHERE status = '자재대기''	 
+				</if>
+				<if test="keyword == '사진대기'	">						 
+						WHERE status = '사진대기'	 
+				</if>
+				<if test="keyword == '정산완료'	">						 
+						WHERE status = '정산완료'	 
+				</if>
+				<if test="keyword == '예산부족'	">						 
+						WHERE status = '예산부족'	 
+				</if>
+				<if test="keyword == '준공완료'	">						 
+						WHERE status = '준공완료'	 
+				</if>
+				<if test="keyword == '계산서완료'	">						 
+						WHERE status = '계산서완료'	 
+				</if>
+				<if test="keyword == '수금완료'	">						 
+						WHERE status = '수금완료'	 
+				</if>
+				
+			</if>
+		 	
+		 	  	
 	    </select>    
 	    
-	    <select id="filterCount"   resultType="int"  >
+<!-- 	    <select id="filterCount"   resultType="int"  >
 	    	<![CDATA[    
 	    	SELECT count(const_day)
 			FROM info_const 
@@ -45,135 +125,135 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 				
 		 	
 		 	]]>  	
-	    </select>    
+	    </select>     -->
 	       <select id="filterCount1"   resultType="int"  >
 	    	<![CDATA[    
-	    	SELECT count(const_day)
-			FROM info_const 
-			where const_day = 10				 	
+	    	SELECT count(status)
+			FROM  info_cnstr_status	 
+			
 		 	]]>  	
 	    </select>    
 	    
 	        <select id="filterCount2"   resultType="int"  >
 	    	<![CDATA[    
-	    	SELECT count(const_day)
-			FROM info_const 
-			where const_day = 11				 	
+	    	SELECT count(status)
+			FROM  info_cnstr_status		 
+			WHERE status = '시공대기'	 	
 		 	]]>  	
 	    </select>    
 	    
 	        <select id="filterCount3"   resultType="int"  >
 	    	<![CDATA[    
-	    	SELECT count(const_day)
-			FROM info_const 
-			where const_day = 12			 	
+	    	SELECT count(status)
+			FROM  info_cnstr_status			 
+			WHERE status = '장기미결' 	
 		 	]]>  	
 	    </select>    
 	    
 	        <select id="filterCount4"   resultType="int"  >
 	    	<![CDATA[    
-	    	SELECT count(const_day)
-			FROM info_const 
-			where const_day = 13				 	
+	    	SELECT count(status)
+			FROM  info_cnstr_status		 
+			WHERE status = '공사취소' 	
 		 	]]>  	
 	    </select>    
 	    
 	        <select id="filterCount5"   resultType="int"  >
 	    	<![CDATA[    
-	    	SELECT count(const_day)
-			FROM info_const 
-			where const_day = 14				 	
+	    	SELECT count(status)
+			FROM  info_cnstr_status	 
+			WHERE status = '철거대기'	 	
 		 	]]>  	
 	    </select>    
 	    
 	        <select id="filterCount6"   resultType="int"  >
 	    	<![CDATA[    
-	    	SELECT count(const_day)
-			FROM info_const 
-			where const_day = 15				 	
+	    	SELECT count(status)
+			FROM   info_cnstr_status	 
+			WHERE status = '굴착대기'		 	
 		 	]]>  	
 	    </select>    
 	    <select id="filterCount7"   resultType="int"  >
 	    	<![CDATA[    
-	    	SELECT count(const_day)
-			FROM info_const 
-			where const_day = 16				 	
+	    	SELECT count(status)
+			FROM  info_cnstr_status	 
+			WHERE status = '시공중'		 	
 		 	]]>  	
 	    </select>    
 	    <select id="filterCount8"   resultType="int"  >
 	    	<![CDATA[    
-	    	SELECT count(const_day)
-			FROM info_const 
-			where const_day = 17				 	
+	    	SELECT count(status)
+			FROM  info_cnstr_status		 
+			WHERE status = '설계변경'	 	
 		 	]]>  	
 	    </select>    
 	     <select id="filterCount9"   resultType="int"  >
 	    	<![CDATA[    
-	    	SELECT count(const_day)
-			FROM info_const 
-			where const_day = 18				 	
+	    	SELECT count(status)
+			FROM   info_cnstr_status		 
+			WHERE status = '시공완료'		 	
 		 	]]>  	
 	    </select>    
 	     <select id="filterCount10"   resultType="int"  >
 	    	<![CDATA[    
-	    	SELECT count(const_day)
-			FROM info_const 
-			where const_day = 19				 	
+	    	SELECT count(status)
+			FROM  info_cnstr_status		 	 
+			WHERE status = '환입대기'	
 		 	]]>  	
 	    </select>    
 	     <select id="filterCount11"   resultType="int"  >
 	    	<![CDATA[    
-	    	SELECT count(const_day)
-			FROM info_const 
-			where const_day = 20				 	
+	    	SELECT count(status)
+			FROM   info_cnstr_status		 
+			WHERE status = '자재대기'	 	
 		 	]]>  	
 	    </select>
 	    <select id="filterCount12"   resultType="int"  >
 	    	<![CDATA[    
-	    	SELECT count(const_day)
-			FROM info_const 
-			where const_day = 21				 	
+	    	SELECT count(status)
+			FROM   info_cnstr_status		 
+			WHERE status = '사진대기'	 	
 		 	]]>  	
 	    </select> 
 	    <select id="filterCount13"   resultType="int"  >
 	    	<![CDATA[    
-	    	SELECT count(const_day)
-			FROM info_const 
-			where const_day = 22				 	
+	    	SELECT count(status)
+			FROM   info_cnstr_status 	 
+			WHERE status = '정산완료'	 	
 		 	]]>  	
 	    </select> 
 	    <select id="filterCount14"   resultType="int"  >
 	    	<![CDATA[    
-	    	SELECT count(const_day)
-			FROM info_const 
-			where const_day = 23				 	
+	    	SELECT count(status)
+			FROM  info_cnstr_status	 	 
+			WHERE status = '예산부족'	
 		 	]]>  	
 	    </select> 
 	    <select id="filterCount15"   resultType="int"  >
 	    	<![CDATA[    
-	    	SELECT count(const_day)
-			FROM info_const 
-			where const_day = 24				 	
+	    	SELECT count(status)
+			FROM   info_cnstr_status	 
+			WHERE status = '준공완료'	 	
 		 	]]>  	
 	    </select> 
 	    <select id="filterCount16"   resultType="int"  >
 	    	<![CDATA[    
-	    	SELECT count(const_day)
-			FROM info_const 
-			where const_day = 25				 	
+	    	SELECT count(status)
+			FROM  info_cnstr_status 		 
+			WHERE status = '계산서완료'	 	
 		 	]]>  	
 	    </select> 
 	    <select id="filterCount17"   resultType="int"  >
 	    	<![CDATA[    
-	    	SELECT count(const_day)
-			FROM info_const 
-			where const_day = 26				 	
+	    	SELECT count(status)
+			FROM info_cnstr_status 			 
+			WHERE status = '수금완료' 	
 		 	]]>  	
 	    </select>     
-	  	<select id="allList"   resultType="mybatis.vo.ConstructionVO"  >
+<!-- 	  	<select id="allList"   resultType="mybatis.vo.ConstructionVO"  >
 	    	<![CDATA[    
 	    	SELECT *
-			FROM info_const 
+			FROM info_cnstr_status
 				
 		 	
 		 	]]>  	
@@ -185,8 +265,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	      select count(number)    
 	        FROM info_const			
 	  ]]>
-   <!--  <include refid="search"></include> -->
+    <include refid="search"></include>
    </select> 
      
-   
+    -->
 </mapper>

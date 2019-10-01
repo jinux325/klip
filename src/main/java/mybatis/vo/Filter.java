@@ -57,11 +57,9 @@ public class Filter {
 	 */
 	public String makeQuery(int filter){
 		String key = searchKey(filter);
-		int day = filter+10;
 		UriComponents uriComponents = UriComponentsBuilder.newInstance()
 				/* .queryParam("searchType",filter) */
 									 .queryParam("keyword", key)
-									 .queryParam("const_day",day)
 									 .build();
 		System.out.println(filter+"@@@");
 		System.out.println(uriComponents.toUriString());
@@ -93,6 +91,18 @@ public class Filter {
 			keyword="환입대기";
 		}else if(filter ==10) {
 			keyword="자재대기";
+		}else if(filter ==11) {
+			keyword="사진대기";
+		}else if(filter ==12) {
+			keyword="정산완료";
+		}else if(filter ==13) {
+			keyword="예산부족";
+		}else if(filter ==14) {
+			keyword="준공완료";
+		}else if(filter ==15) {
+			keyword="계산서완료";
+		}else if(filter ==16) {
+			keyword="수금완료";
 		}
 		
 		return keyword;

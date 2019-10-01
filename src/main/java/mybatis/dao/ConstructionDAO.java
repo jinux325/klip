@@ -2,7 +2,7 @@ package mybatis.dao;
 
 import java.util.List;
 
-import mybatis.vo.ConstructionVO;
+import mybatis.vo.info.CnstrStatusVO;
 import mybatis.vo.Filter;
 
 public interface ConstructionDAO {
@@ -13,10 +13,10 @@ public interface ConstructionDAO {
 	
 	
 	//public List<ConstructionVO> filter(String keyword);
-	public List<ConstructionVO> filter(Filter  filter);
-	public int  filterCount(Filter  filter);
+	public List<CnstrStatusVO> filter(Filter  filter);
+	//public int  filterCount(Filter  filter);
 	
-	public List<ConstructionVO> allList();
+	//public List<ConstructionVO> allList();
 	
 	public int filterCount1();
 	public int filterCount2();
