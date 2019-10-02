@@ -163,7 +163,7 @@ public class HomeController {
 		cntrcVO.setCntrc_division(dto.getSelCntrc());
 		cntrcVO.setEnterprise(dto.getCnstrComp());
 		String cntrcAmount = dto.getCntrcAmount();
-		int amount = !cntrcAmount.isEmpty() && cntrcAmount != null && !cntrcAmount.equals("0") ? Integer.parseInt(cntrcAmount.replaceAll(",", "")) : 0;
+		long amount = !cntrcAmount.isEmpty() && cntrcAmount != null && !cntrcAmount.equals("0") ? Long.parseLong(cntrcAmount.replaceAll(",", "")) : 0;
 		cntrcVO.setAmount(amount);
 		cntrcVO.setRegdate(dto.getCntrcDate());
 		
