@@ -360,7 +360,9 @@
 <body>
 
 
-	
+	<!-- Modal -->
+	<%@ include file="./modal.jsp" %>
+	<!-- //Modal -->   
 	
 	
     <!-- headerWrap -->
@@ -524,10 +526,11 @@
             <li class="side2"><a href="/Configuration/KeyPointList.aspx">중점사항</a></li>
         </ul> -->
     </div>
-    <!-- //navWrap -->
+    <!-- //navWrap --> 
 
     <!-- container -->
     <div id="container" style="height: 3px;">
+    	
         <!-- snbWrap -->
        <!--  <div id="snbWrap" style="height: 856px;">
             레프트 메뉴
@@ -566,7 +569,7 @@
             //레프트 메뉴
         </div> -->
         <!-- //snbWrap -->
-        <!-- contents -->
+        <!-- contents -->        
         <div class="contents_bdy">
             <div id="contents" style="height: 918px;">
                 <div id="ctl00_RadSplitter1" class="telerik_rad_splitter" style="height: 400px; width: 1569px;">
@@ -639,8 +642,7 @@
                                                 <div class="raColor raTransp"></div>
                                             </div>
                                             <!-- 본문 -->
-                                           
-
+                                       
                                             <div class="contents_bdy">
                                                 <h2 class="tit_bdy1">공사 목록</h2>
 
@@ -715,7 +717,7 @@
                                                                 </li>
                                                                 <li>
                                                                   <span id="ctl00_ContentPlaceHolder1_btnInsertProject" class="RadButton RadButton_Telerik rbSkinnedButton btn_ty3" tabindex="0" rwopener="true">
-                                                                    <input class="rbDecorated" type="submit" name="ctl00$ContentPlaceHolder1$btnInsertProject" id="ctl00_ContentPlaceHolder1_btnInsertProject_input" value="신규등록" tabindex="-1">
+                                                                    <input class="rbDecorated" type="button" name="ctl00$ContentPlaceHolder1$btnInsertProject" id="insertItem" value="신규등록" tabindex="-1">
                                                                     <input id="ctl00_ContentPlaceHolder1_btnInsertProject_ClientState" name="ctl00_ContentPlaceHolder1_btnInsertProject_ClientState" type="hidden" autocomplete="off">
                                                                   </span>
                                                                 </li>
@@ -924,6 +926,5 @@
         <!-- //contents -->
     </div>
     <!-- //container -->
-
 </body>
 </html>
