@@ -788,11 +788,9 @@
                                                                     </colgroup>
                                                                     <thead>                                                                       
                                                                         <tr>
-                                                                            <th scope="col" class="rgHeader" style="white-space:nowrap;">업체</th>	                                                                        	
-                                                                        	<!-- <th scope="col" class="rgHeader" style="white-space:nowrap;">업체명</th>	 -->																			
+                                                                            <th scope="col" class="rgHeader" style="white-space:nowrap;">업체</th>	              																	
 																			<th scope="col" class="rgHeader" style="white-space:nowrap;">구분</th>	
-																			<th scope="col" class="rgHeader" style="white-space:nowrap;">계약번호</th>																																						
-																			<!-- <th scope="col" class="rgHeader" style="white-space:nowrap;">공정관리</th> -->
+																			<th scope="col" class="rgHeader" style="white-space:nowrap;">계약번호</th>				
 																			<th scope="col" class="rgHeader" style="white-space:nowrap;">공사번호</th>
 																			<th scope="col" class="rgHeader" style="white-space:nowrap;">공사명</th>
 																			<th scope="col" class="rgHeader" style="white-space:nowrap;">계약금액</th>
