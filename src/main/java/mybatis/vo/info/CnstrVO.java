@@ -3,6 +3,7 @@ package mybatis.vo.info;
 import java.util.List;
 
 import lombok.Data;
+import mybatis.vo.ListCnstrVO;
 
 @Data
 public class CnstrVO {
@@ -36,5 +37,6 @@ public class CnstrVO {
 	
 
 	private CntrcVO cntrcvo;
-		
+	
+	private ListCnstrVO listcnstrvo;
 }

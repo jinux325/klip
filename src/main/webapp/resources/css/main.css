@@ -1,0 +1,212 @@
+body {
+  margin-top: 0px;
+  font-family: 'Trebuchet MS', serif;
+  line-height: 1.6
+}
+
+table {
+  padding:0;
+  border:0;
+  border-spacing:0px;
+  border-collapse:collapse;
+}
+
+table#cnstr-table {
+  background: #ffffff;
+  width: 100%;
+}
+
+table#cnstr-table th, table#cnstr-table td {
+  border: 1px solid black;
+  padding: 10px 5px 10px 5px;
+  text-align: center;
+}
+
+div#sidebox > th, td {
+  border: 1px solid black;
+  padding: 5px 0px;
+  text-align: center;
+}
+
+div#mainForm td {
+  text-align: center;
+}
+
+div#searchForm td {
+  border: 0;
+  padding-right: 5px;
+  text-align: left;
+  font-size: 18px;
+}
+
+div#searchForm td label {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+div#searchForm td input, select {
+  width: 100%;
+  height: 30px;
+}
+
+div#searchForm td div#sumAmountForm td {
+  border: 1px solid black;
+}
+
+table#cnstr-table th {
+  background-color: #997149;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+div#sidebox table tr:hover {
+  background-color: #1f090a;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+table#cnstr-table tr:hover {
+  background-color: #fffaad;
+  color: #000000;
+}
+
+.highlight {
+  background-color: #e8caad;
+  color: #000000;
+  font-weight: bold;
+}
+
+.alignLeft {
+  text-align: left;
+}
+
+.alignRight {
+  text-align: right;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+#search-manager td {
+  padding: 5px;
+}
+
+#sidebox {
+  border: 1px solid #ffffff;
+  background: #4d341b;
+  position: fixed;
+  width: 160px;
+  height: 820px;
+  padding: 5px;
+  right: 10px;
+  color: #bcbcbc;
+}
+
+#sidebox table#side-menu1 {
+  background: #997144;
+}
+
+#sidebox table#side-menu2{
+  background: #887144;
+}
+
+#sidebox table#side-menu3 {
+  background: #777144;
+}
+
+#sidebox table#side-menu4 {
+  background: #667144;
+}
+
+#sidebox table#side-menu5 {
+  background: #007144;
+}
+
+#sidebox table tbody {
+  padding: 5px;
+  color: #ffffff;
+}
+
+#sidebox table tr {
+  border: 1px solid black;
+}
+
+#sidebox table td {
+  border: 0;
+}
+
+ul#filter {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+
+ul#filter li {
+  display: inline-block;
+  padding: 0px;
+  margin-right: 10px;
+}
+
+ul#filter fieldset {
+  border: 1px solid #8b7b7b;
+  padding: 5px 8px;
+}
+
+ul#filter table > tbody > tr > td  {
+  padding: 0px 5px;
+  border: 0;
+  text-align: center;
+}
+
+ul#filter input[type="checkbox"] {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #8b7b7b;
+  background: #ffffff;
+  cursor: pointer;
+  position: relative;
+  top: 1.5px;
+}
+
+ul#filter label {
+  position: relative;
+  top: -2.5px;
+  margin-left: 4px;
+  color: #8b7b7b;
+}
+
+ul.tabs{
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+}
+
+ul.tabs li{
+	background: #ffffff;
+	color: #000000;
+	display: inline-block;
+	padding: 15px 20px;
+	cursor: pointer;
+  font-size: 20px;
+}
+
+ul.tabs li.current{
+	background: #ededed;
+	color: #000000;
+  font-weight: bold;
+}
+
+.tab-content{
+	display: none;
+	background: #ededed;
+	padding: 15px;
+}
+
+.tab-content.current{
+  background: #ededed;
+	display: block;
+}

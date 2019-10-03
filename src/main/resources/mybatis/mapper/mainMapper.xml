@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mybatis.dao.MainDAO">
+
+		  <resultMap id="Cnstr" type="mybatis.vo.info.CnstrStatusVO" >
+		   			<association property="cnstrvo" column="cnstr_number" select="selectCnstr"  />
+		   			<association property="listManagerVo" column="manager_id" select="selectListManager"  />
+		   </resultMap>
+		    
+		   <resultMap id="Cntrc" type="mybatis.vo.info.CnstrVO" >
+		   			<association property="cntrcvo" column="number" select="selectCntrc"  />
+		   			<association property="listcnstrvo" column="cnstr_division" select="selectListCnstr"  />
+		   </resultMap>
+		  		   
+		   <resultMap id="CntrcDivision" type="mybatis.vo.info.CntrcVO" >
+		   			<association property="listcntrcvo" column="cntrc_division" select="selectCntrcDivision"  />
+		   </resultMap>
+		   
+		  <!--  <resultMap id="ListCnstr" type="mybatis.vo.info.CnstrVO" >
+		   			<association property="listcnstrvo" column="cnstr_division" select="selectListCnstr"  />
+		   </resultMap>
+		    -->
+ 		<select id="selectCnstrStatus" resultType="mybatis.vo.info.CnstrStatusVO" resultMap="Cnstr">
+	    	SELECT *
+			FROM info_cnstr_status					
+	    </select>
+	    
+	 	<select id="selectCnstr" resultType="mybatis.vo.info.CnstrVO"  resultMap="Cntrc" >
+	    	SELECT *
+			FROM info_cnstr
+			 WHERE number = #{id}
+			 
+	    </select>
+	    
+ 		<select id="selectCntrc" resultType="mybatis.vo.info.CntrcVO"  resultMap="CntrcDivision">
+	    	SELECT *
+			FROM info_cntrc
+			 WHERE  cnstr_number = #{id}
+	    </select>
+	    	    
+	    <select id="selectCntrcDivision" resultType="mybatis.vo.ListCntrcVO"  >
+	    	SELECT *
+			FROM list_cntrc
+			 WHERE  id = #{id}
+	    </select>
+	    
+	    <select id="selectListCnstr" resultType="mybatis.vo.ListCnstrVO"  >
+	    	SELECT *
+			FROM list_cnstr
+			 WHERE id = #{id}
+	    </select>
+ 
+ 	    <select id="selectListManager" resultType="mybatis.vo.ListManagerVO"  >
+	    	SELECT *
+			FROM list_manager
+			 WHERE id = #{id}
+	    </select>
+	    
+</mapper>

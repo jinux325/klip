@@ -1,6 +1,7 @@
 package mybatis.vo.info;
 
 import lombok.Data;
+import mybatis.vo.ListCntrcVO;
 
 @Data
 public class CntrcVO {
@@ -17,5 +18,7 @@ public class CntrcVO {
 	private long amount;
 	// 작성일
 	private String regdate;
+	
+	private ListCntrcVO listcntrcvo;
 	
 }

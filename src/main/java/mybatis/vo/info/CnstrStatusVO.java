@@ -1,6 +1,7 @@
 package mybatis.vo.info;
 
 import lombok.Data;
+import mybatis.vo.ListManagerVO;
 
 @Data
 public class CnstrStatusVO {
@@ -17,6 +18,9 @@ public class CnstrStatusVO {
 	private String regdate;
 	
 	private CnstrVO cnstrvo;
+	
+	private ListManagerVO listManagerVo;
+	
 	
 	
 }
