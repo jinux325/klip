@@ -341,7 +341,7 @@
           						<td >시공완료일</td>
           						<td >0%</td>
           						<td >0%</td>
-          						<td >0%</td>
+          						<td >100%</td>
 	                  </tr>
                   	</c:forEach>
                 </tbody>
