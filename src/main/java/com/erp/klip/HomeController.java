@@ -110,6 +110,18 @@ public class HomeController {
 		
 		model.addAttribute("filter", filter);
 		
+		ListTeamDAO listTeamDAO = sqlsessonTemplate.getMapper(ListTeamDAO.class);
+		ListCompDAO listCompDAO = sqlsessonTemplate.getMapper(ListCompDAO.class);
+		ListCntrcDAO listCntrcDAO = sqlsessonTemplate.getMapper(ListCntrcDAO.class);
+		ListCnstrDAO listCnstrDAO = sqlsessonTemplate.getMapper(ListCnstrDAO.class);
+		ListBuildDAO listBuildDAO = sqlsessonTemplate.getMapper(ListBuildDAO.class);
+				
+		model.addAttribute("listTeam", listTeamDAO.listTeam());
+		model.addAttribute("listComp", listCompDAO.listCompDivision());
+		model.addAttribute("listCntrc", listCntrcDAO.listCntrcDivision());
+		model.addAttribute("listCnstr", listCnstrDAO.listCnstrDivision());
+		model.addAttribute("listBuild", listBuildDAO.listBuildDivision());
+		
 
 		return "filter";
 	}

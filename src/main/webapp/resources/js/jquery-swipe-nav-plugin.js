@@ -11,23 +11,24 @@ jQuery(document).ready(function($){
 		$(document.body).css({
 			'overflow-x' : 'hidden',
 			'position': 'relative',
-			'left' : 0,
+			'right' : 0,
 		});
 		options.menu.css({
 			'position' : 'fixed',
 			'top' : 0,
-			'left': - menuWidth + 'px',
+			'right': - menuWidth + 'px',
 			'width': + menuWidth + 'px',
 			'height' : 100 + '%',
+			'z-index' : 20
 		});
 		options.menuBtn.on('click',function(){
 		    options.body.toggleClass('open');
 	        if(options.body.hasClass('open')){
-	            options.body.animate({'left' : menuWidth }, options.menuSpeed);
-	            options.menu.animate({'left' : 0 }, options.menuSpeed);
+	            options.body.animate({'right' : menuWidth }, options.menuSpeed);
+	            options.menu.animate({'right' : 0 }, options.menuSpeed);
 	        } else {
-	            options.menu.animate({'left' : -menuWidth }, options.menuSpeed);
-	            options.body.animate({'left' : 0 }, options.menuSpeed);
+	            options.menu.animate({'right' : -menuWidth }, options.menuSpeed);
+	            options.body.animate({'right' : 0 }, options.menuSpeed);
 	        }
 	    });
     }

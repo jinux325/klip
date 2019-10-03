@@ -196,7 +196,7 @@ body {background:#ebe9e4;}
 
 /* sub ====================================================================================================*/
 #subWrap {background:#ebe9e4; min-width:1280px;}
-#contents .contents_bdy {clear:both; position:relative; width:980px; padding:20px 10px 20px 30px; margin:0 0 0 240px;}
+#contents .contents_bdy {clear:both; position:relative; width:100%; padding:20px 10px 20px 30px; margin:0px;}
 /* 상단검색 */
 #contents div.src_bx {clear:both; padding:14px; margin-bottom:10px; border:1px solid #CCC; background:#FFF;}
 #contents div.src_bx:after {content:""; display:block; clear:both; *zoom:1;}

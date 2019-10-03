@@ -574,11 +574,11 @@
             <div id="contents" style="height: 918px;">
                 <div id="ctl00_RadSplitter1" class="telerik_rad_splitter" style="height: 400px; width: 1569px;">
                     <div style="">
-                        <table id="RAD_SPLITTER_ctl00_RadSplitter1" class="RadSplitter RadSplitter_Telerik" style="width:1px;height:1px;border-left-width:1px;border-top-width:1px;">
+                        <table id="RAD_SPLITTER_ctl00_RadSplitter1" class="RadSplitter RadSplitter_Telerik" style="width:97%;height:1px;border-left-width:1px;border-top-width:1px;">
                             <tbody>
                                 <tr>
                                     <td id="ctl00_RadPane2" class="rspPane rspFirstItem rspLastItem" style="border-right-width:1px;border-bottom-width:1px;">
-                                        <div id="RAD_SPLITTER_PANE_CONTENT_ctl00_RadPane2" style="width: 1567px; height: 398px; overflow: auto;">
+                                        <div id="RAD_SPLITTER_PANE_CONTENT_ctl00_RadPane2" style="width: 100%; height: 398px; overflow: auto;">
                                             <script type="text/javascript">
                                                 function OpenPositionedWindow(oButton, url, windowName) {
                                                     var oWnd = window.radopen(url, windowName);
@@ -632,7 +632,7 @@
                                             <style>
                                                 .rgSortAsc { display:none;}
                                                 .rgSortDesc { display:none;}
-                                                .RadGrid.brd_list2 table.rgMasterTable tfoot tr.rgFooter td{text-align: right;background:#fafafa;}
+                                                .RadGrid.brd_list2 table.rgMasterTable tfoot tr.rgFooter td{text-align: right; background:#fafafa;}
                                             </style>
                                             <div id="ContentPlaceHolder1_RadAjaxManager2SU" style="display: inline;">
                                                 <span id="ctl00_ContentPlaceHolder1_RadAjaxManager2" style="display:none;"></span>
@@ -780,13 +780,21 @@
                                                             <div id="ctl00_ContentPlaceHolder1_RadGridProjectList" class="RadGrid RadGrid_Telerik brd_list2" style="width:100%;" tabindex="0">
                                                                 <table class="rgMasterTable" id="mainTable" style="width:100%;table-layout:auto;empty-cells:show;">
                                                                     <colgroup>
-                                                                        <col style="width:10%">
-                                                                        <%-- <col style="width:10%"> --%>
-                                                                        <col style="width:18%">                                                                        
+                                                                        <col style="width:4%">
+                                                                        <col style="width:4%">                                                                        
+                                                                        <col style="width:8%">
+                                                                        <col style="width:8%">
                                                                         <col style="width:*">
-                                                                        <col style="width:10%">
-                                                                        <col style="width:10%">
-                                                                        <col style="width:10%">
+                                                                        <col style="width:8%">
+                                                                        <col style="width:4%">                                                                        
+                                                                        <col style="width:4%">
+                                                                        <col style="width:4%">
+                                                                        <col style="width:4%">
+                                                                        <col style="width:6%">
+                                                                        <col style="width:4%">                                                                        
+                                                                        <col style="width:3%">
+                                                                        <col style="width:3%">
+                                                                        <col style="width:3%">
                                                                     </colgroup>
                                                                     <thead>                                                                       
                                                                         <tr>
