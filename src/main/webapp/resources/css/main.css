@@ -99,7 +99,7 @@ table#cnstr-table tr:hover {
   background: #4d341b;
   position: fixed;
   width: 160px;
-  height: 820px;
+  height: max-content;
   padding: 5px;
   right: 10px;
   color: #bcbcbc;
@@ -209,4 +209,23 @@ ul.tabs li.current{
 .tab-content.current{
   background: #ededed;
 	display: block;
+}
+
+/* --->>> HeaderStyle <<<---*/
+.gridView {
+  width: 100%;
+  clear: both;
+}
+
+.gridView thead tr {
+    background-color: #997149;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+}
+.gridView thead tr th {
+    border: 1px solid black;
+    padding: 10px 5px 10px 5px;
+    text-align: center;
+    vertical-align: middle;
 }

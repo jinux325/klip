@@ -1,19 +1,24 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page session="false" %>
-<!DOCTYPE html>
 <html>
 <head>
   <title>공사 목록</title>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=0.8, user-scalable=yes, target-densitydpi=medium-dpi">
-  <!-- <link rel="stylesheet" href="./css/import.css"> -->
-  <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <script type="text/javascript" src="./js/main.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
+  <script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+  <script type="text/javascript" src="js/jquery.freezeheader.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+    	$("#cnstr-table").freezeHeader();
+    });
+  </script>
 </head>
 <body>
   <div class="container">
@@ -274,12 +279,11 @@
                 </div>
               </div>
               <!-- //Search Form -->
-            </div> 
-            
-            
+            </div>
+
             <!-- Board Form -->
             <div id="boardForm" class="">
-              <table class="" id="cnstr-table">
+              <table id="cnstr-table" class="gridView">
                 <colgroup>
                   <col style="width:4%">
                   <col style="width:4%">
@@ -319,25 +323,25 @@
                   </tr>
                 </thead>
                 <tbody>
-                 	<c:forEach var="value" items="${list}">
+                  <c:forEach var="value" items="${list}">
 	                  <tr>
-	                    <td>${value.id }</td>	                                     
+	                    <td>${value.id }</td>
 	                    <td >${value.cnstrvo.cntrcvo.enterprise }</td>
-						<td >${value.cnstrvo.cntrcvo.listcntrcvo.name }</td>
-						<td >${value.cnstrvo.cntrcvo.number }</td>
-						<td >${value.cnstrvo.cntrcvo.cnstr_number }</td>
-						<td class="alignLeft">${value.cnstrvo.name }</td>
-						<td class="alignRight">${value.cnstrvo.cntrcvo.amount }</td>
-						<td >감독</td>
-						<td >${value.cnstrvo.listcnstrvo.name }
-						</td>
-						<td >${value.listManagerVo.name }</td>
-						<td >${value.status }</td>
-						<td >${value.regdate }</td>
-						<td >시공완료일</td>
-						<td >0%</td>
-						<td >0%</td>
-						<td >0%</td> 
+          						<td >${value.cnstrvo.cntrcvo.listcntrcvo.name }</td>
+          						<td >${value.cnstrvo.cntrcvo.number }</td>
+          						<td >${value.cnstrvo.cntrcvo.cnstr_number }</td>
+          						<td class="alignLeft">${value.cnstrvo.name }</td>
+          						<td class="alignRight">${value.cnstrvo.cntrcvo.amount }</td>
+          						<td >감독</td>
+          						<td >${value.cnstrvo.listcnstrvo.name }
+          						</td>
+          						<td >${value.listManagerVo.name }</td>
+          						<td >${value.status }</td>
+          						<td >${value.regdate }</td>
+          						<td >시공완료일</td>
+          						<td >0%</td>
+          						<td >0%</td>
+          						<td >0%</td>
 	                  </tr>
                   	</c:forEach>
                 </tbody>

@@ -1,5 +1,6 @@
 $(document).ready(function(){
-
+	
+	// Tab Current Click
 	$('ul.tabs li').click(function(){
 		var tab_id = $(this).attr('data-tab');
 
@@ -10,6 +11,7 @@ $(document).ready(function(){
 		$("#"+tab_id).addClass('current');
 	});
 
+	// Table tr Click Event
   $('#cnstr-table tr').click( function(){
     var selected = $(this).hasClass("highlight");
 
