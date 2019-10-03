@@ -155,6 +155,17 @@ $(function() {
 $(document).ready(function() {
 	nowDate($("#regDate"));
 	
+	// Tab Current Click
+	$('ul.tabs li').click(function(){
+		var tab_id = $(this).attr('data-tab');
+
+		$('ul.tabs li').removeClass('current');
+		$('.tab-content').removeClass('current');
+
+		$(this).addClass('current');
+		$("#"+tab_id).addClass('current');
+	});
+	
 	$(function() {
 		if($("#cbBring").is(":checked")) {
 			$("#isBring").val("true");

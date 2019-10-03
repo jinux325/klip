@@ -14,6 +14,7 @@
 
 /* Modal Content/Box */
 .modal-content {
+	position: relative;
     background-color: #fefefe;
     margin: 5% auto; /* 15% from the top and centered */
     padding: 0px;
@@ -22,10 +23,57 @@
 }
 
 .modal-head {
-  display: inline-block;
+  display: block;
   color: #FFF;
+  margin: 0;
+  vertical-align: top;
   background-color: #997149;
 
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+ul {
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+}
+
+ul.tabs li {
+	background: #ffffff;
+	color: #000000;
+	display: inline-block;
+	padding: 15px 20px;
+	cursor: pointer;
+  font-size: 20px;
+}
+
+ul.tabs li.current {
+	background: #ededed;
+	color: #000000;
+  font-weight: bold;
+}
+
+.tab-content {
+	display: none;
+	background: #ededed;
+	padding: 15px;
+}
+
+.tab-content.current {
+  background: #ededed;
+	display: block;
+}
+
+modal-content .pop_head {
+	display: block;
+	margin: 0px;
+	padding: 0 20px;
+	color: #fff;
+	background: #997149;
 }
 
 /* The Close Button */

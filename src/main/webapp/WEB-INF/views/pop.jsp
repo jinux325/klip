@@ -1,41 +1,44 @@
 <%@ page language="java" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<link rel="stylesheet" href="./css/pop.css">
+<script src="./js/pop.js"></script>
+<script src="./js/modal.js"></script>
+
 <div id="modal-form" class="modal" style="z-index: 20">
 	<div class="pop_wrap modal-content">
-		<h1 style="display: none;">팝업창</h1>
 		<div class="container">
 			<!-- 상단 -->
 			<div class="pop_head">
-				<h2 class="tit modal-head">업체 등록</h2>
+				<h2 class="head">등록</h2>
 				<span id="modal-close" class="close">&times;</span>
 			</div>
 			<!-- //상단 -->
 		
 			<!-- 탭 제목 -->
-			<div id="" class="">
+			<div id="pop_tabs" class="">
 				<div class="">
 					<ul class="tabs">
 						<!-- 계약 정보 -->
-						<li class="tab-link current" data-tab="tab-1"><a class="" href="#"><span class="">계약 정보</span></a></li>
+						<li class="tab-link current" data-tab="tab-1"><span class="">계약 정보</span></li>
 						<!-- 준공 정보 -->
-						<li class="tab-link" data-tab="tab-2"><a class="" href="#"><span class="">준공 정보</span></a></li>
+						<li class="tab-link" data-tab="tab-2"><span class="">준공 정보</span></li>
 						<!-- 굴착 정보 -->
-						<li class="tab-link" data-tab="tab-2"><a class="" href="#"><span class="">굴착 정보</span></a></li>
+						<li class="tab-link" data-tab="tab-3"><span class="">굴착 정보</span></li>
 						<!-- 전주 정보 -->
-						<li class="tab-link" data-tab="tab-2"><a class="" href="#"><span class="">전주 정보</span></a></li>
+						<li class="tab-link" data-tab="tab-4"><span class="">전주 정보</span></li>
 					</ul>
 				</div>
 			</div>
 			<!-- //탭 제목 -->
 		
 			<!-- 본문 -->
-			<div id="">
-				<div id="">
-					<div class="tab-1">
-						<!-- 입력폼 -->
+			<div id="pop_body" class="pop_body">
+				<div id="pop_body_main" class="pop_body_main">
+					<div id="tab-1" class="tab-content current">
+		        		<!-- 입력폼 -->
 						<form id="frm" name="frm" method="post" enctype="multipart/form-data">
-							<fieldset class="fld_mg30">
-								<!-- 업무 정보 -->
+							<!-- 업무 정보 -->
+							<fieldset>
+								<legend>업무 정보</legend>
 								<table class="brd_write2">
 									<colgroup>
 										<col width="14.2%">
@@ -48,25 +51,28 @@
 									</colgroup>
 									<tbody>
 										<tr>
-											<th style="background-color: #e6e6e6;">업무팀 (*)</th>
+											<th>업무팀 (*)</th>
 											<td><select name="curTeam" id="selTeam">
 													<option value="0">선택</option>
 													<c:forEach items="${listTeam }" var="item">
 														<option value="${item.id }">${item.id}:${item.name }</option>
 													</c:forEach>
 											</select></td>
-											<th style="background-color: #e6e6e6;">업무 담당자 (*)</th>
+											<th>업무 담당자 (*)</th>
 											<td>
 												<select name="curManager" id="selManager">
 													<option value="0">선택</option>
 												</select>
 											</td>
-											<th style="background-color: #e6e6e6;">작성일</th>
+											<th>작성일</th>
 											<td colspan="2"><input id="regDate" name="curDate" type="text" class="datepicker" placeholder="YY-MM-DD" /></td>
 										</tr>
 									</tbody>
 								</table>
-								<br />
+							</fieldset>	
+							<br />
+							<fieldset>
+								<legend>공사 정보</legend>
 								<!-- 공사 정보 -->
 								<table class="brd_write2">
 									<colgroup>
@@ -79,9 +85,6 @@
 										<col width="*">
 									</colgroup>
 									<tbody>
-										<tr>
-											<th colspan="7" style="background-color: #e6e6e6;">공사 정보</th>
-										</tr>
 										<tr>
 											<th>업체</th>
 											<th>계약 번호</th>
@@ -106,7 +109,10 @@
 										</tr>
 									</tbody>
 								</table>
-								<br />
+							</fieldset>
+							<br />
+							<fieldset>
+								<legend>공사 성격 및 실행율</legend>
 								<!-- 공사 성격 및 실행율 -->
 								<table class="brd_write2">
 									<colgroup>
@@ -119,10 +125,6 @@
 										<col width="*">
 									</colgroup>
 									<tbody>
-										<tr>
-											<th colspan="7" style="background-color: #e6e6e6;">공사 성격
-												및 실행율</th>
-										</tr>
 										<tr>
 											<th>계약 업체</th>
 											<th>계약 구분</th>
@@ -166,7 +168,10 @@
 										</tr>
 									</tbody>
 								</table>
-								<br />
+							</fieldset>
+							<br />
+							<fieldset>
+								<legend>계약 정보</legend>
 								<!-- 계약 금액 -->
 								<table class="brd_write2">
 									<colgroup>
@@ -179,9 +184,6 @@
 										<col width="*">
 									</colgroup>
 									<tbody>
-										<tr>
-											<th colspan="7" style="background-color: #e6e6e6;">계약 금액</th>
-										</tr>
 										<tr>
 											<th rowspan="2">계약 금액 (￦)</th>
 											<th colspan="3">가공 공사</th>
@@ -225,7 +227,10 @@
 										</tr>
 									</tbody>
 								</table>
-								<br />
+							</fieldset>
+							<br />
+							<fieldset>
+								<legend>한전 업무 담당자</legend>
 								<!-- 한전 업무 담당자 -->
 								<table class="brd_write2">
 									<colgroup>
@@ -238,9 +243,6 @@
 										<col width="*">
 									</colgroup>
 									<tbody>
-										<tr>
-											<th colspan="7" style="background-color: #e6e6e6;">한전 업무담당자</th>
-										</tr>
 										<tr>
 											<th colspan="2">지사</th>
 											<th colspan="2">부서</th>
@@ -274,7 +276,10 @@
 										</tr>
 									</tbody>
 								</table>
-								<br />
+							</fieldset>
+							<br />
+							<fieldset>
+								<legend>시공 일정 정보</legend>
 								<!-- 공기 (시공 일정) -->
 								<table class="brd_write2">
 									<colgroup>
@@ -288,9 +293,6 @@
 									</colgroup>
 									<tbody>
 										<tr>
-											<th colspan="7" style="background-color: #e6e6e6;">공기 (시공일정)</th>
-										</tr>
-										<tr>
 											<th colspan="2">계약일</th>
 											<th colspan="2">착공일</th>
 											<th colspan="2">준공일</th>
@@ -301,40 +303,42 @@
 											<td colspan="2"><input id="startDate" type="text" name="startDate" class="datepicker" onchange="diffDate()" placeholder="YY-MM-DD"></td>
 											<td colspan="2"><input id="endDate" type="text" name="endDate" class="datepicker" onchange="diffDate()" placeholder="YY-MM-DD"></td>
 											<td><input id="diffDay" type="text" placeholder="00" readonly></td>
-			</tr>
-					</tbody>
+										</tr>
+									</tbody>
 								</table>
 							</fieldset>
-		
 						</form>
 						<!-- //상단입력폼 -->
-					</div>
-					<!-- //본문 -->
-					<hr>
-					<!-- 하단 -->
-					<div class="pop_footer">
-						<ul class="btn_ctr">
-							<!-- 저장 -->
-							<li>
-								<span id="btnSaving" class="" tabindex="0">
-									<input class="" type="button" name="" id="btnSaving_input" value="저장" tabindex="-1">
-								</span>
-								<div id="valSummary" style="display: none;"></div>
-							</li>
-							<!-- //저장 -->
-							<!-- 수정 -->
-		
-							<!-- //수정 -->
-							<!--삭제-->
-		
-							<!--//삭제-->
-						</ul>
-					</div>
-					<!-- //하단 -->
+			      	</div>
+					<div id="tab-2" class="tab-content">
+		        	---- ---- ★--453---- ---- ---- ---- ---- ---- ---- -------- ---- ---- ---- ---- ---- ---- -------- ---- ---- ---- ★-- ---- ---- ------★ ---- ---- ---- ---- ---- ---- -------- ---- ---- ---- ---- ---- ---- ★------ ---- ---- ---- ----
+			      	</div>
+			      	<div id="tab-3" class="tab-content">
+			        ---- ★-- -------- ---- ---4545$%$%- ---- -★- ---- ---- -------- ---- -★- ---- ---- ---- ---- -------- ---- ---- ---- ---- ---- --★ -------- ★-- ---- ---- ---- ---- ---- -------- ---- ---- --★ ---- ---- ---- -------- ---- ---- ---- --★
+			      	</div>
+			      	<div id="tab-4" class="tab-content">
+			        ---- #$★-- -------$%$%- ---- ---- #%#^---- -★- ---- ---- ----#%#%---- ---- -★- ---- ---- -#$#$#--- ---- -------- ---- ---- ---- ---- ---- --★ -------- ★-- ---- ---- ---- ---- ---- -------- ---- ---- --★ ---- ---- ---- -------- ---- ---- ---- --★
+			      	</div>
 				</div>
+				
+				<!-- 하단 메뉴 -->
+				<div id="pop_foot" class="pop_foot">
+					<div class="btn_ctr">
+						<ul class="bnt_tabs">
+							<!-- 저장 -->
+							<li class="" id=""><span class="">저장</span></li>
+							
+							<!-- 삭제 -->
+							<li class="" id=""><span class="">삭제</span></li>
+							
+							<!-- 닫기 -->
+							<li class="" id=""><span class="">닫기</span></li>
+						</ul>
+				</div>
+				</div>
+				
 			</div>
 			<!-- //본문 -->
-		
 		</div>
 	</div>
 </div>

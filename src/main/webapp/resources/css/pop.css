@@ -1,0 +1,228 @@
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 20; /* Sit on top */
+    left: 0;
+    top: 90;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+	position: relative;
+    background-color: #fefefe;
+    margin: 5% auto; /* 15% from the top and centered */
+    padding: 0px;
+    border: 1px solid #888;
+    width: 60%; /* Could be more or less, depending on screen size */ 
+    height: max-content;
+}
+
+.modal-head {
+  display: block;
+  color: #FFF;
+  margin: 0;
+  vertical-align: top;
+  background-color: #997149;
+}
+
+.pop_wrap {
+	position:relative;
+	padding-bottom:0px; 
+	background:#FFF;
+}
+
+.pop_head {
+	background-color: #997149;
+	padding: 0 20px;
+	color: #fff;
+}
+
+.head {
+	display: inline-block;
+	padding: 10px 0px;
+	margin: 0px;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.container .pop_body .pop_body_main .tab-content {
+	min-height: 300px;
+	margin-bottom: 0px;
+}
+
+table.brd_write2 {
+	border-collapse: collapse;
+	border-spacing: 0;
+	border: 0;
+	
+	width: 100%;
+	clear: both;
+	position: relative;
+}
+
+table.brd_write2 tr, td, th {
+	border: 1px solid black;
+	padding: 0;
+	margin: 0;
+	vertical-align: top;
+}
+
+table.brd_write2 th {
+	background-color: #c8c6cc;
+	padding: 5px;
+	font-weight: bold;
+	color: #333;
+	text-align: center;
+	vertical-align: middle;
+}
+
+table.brd_write2 td {
+	padding: 3px 2px 3px 2px;
+	vertical-align: middle;
+}
+
+table.brd_write2 input, select {
+	width: 100%;
+	height: 30px;
+	padding: 0;
+	margin: 0;
+	vertical-align: top;
+}
+
+table.brd_write2 input[type="text"], input[type="number"] {
+	height: 30px;
+	padding: 0 5px;
+	border: 1px solid #d5d9e0;
+	text-align: center;
+	
+	-webkit-box-sizing: border-box;
+}
+
+fieldset {
+	/* border: 0; */
+}
+
+.pop_foot {
+	background: #ededed;
+	height: max-content;
+	text-align: center;
+	padding: 10px 0 20px 0;
+	vertical-align: middle;
+}
+
+ul {
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+}
+
+ul.tabs li {
+	background: #ffffff;
+	color: #000000;
+	display: inline-block;
+	padding: 15px 20px;
+	cursor: pointer;
+  	font-size: 20px;
+}
+
+ul.tabs li.current {
+	background: #ededed;
+	color: #000000;
+  font-weight: bold;
+}
+
+div.btn_ctr ul.bnt_tabs li {
+	background: #c0c0c0;
+	color: #000000;
+	display: inline-block;
+	padding: 15px 20px;
+	margin: 10px;
+	cursor: pointer;
+  	font-size: 20px;
+}
+
+div.btn_ctr ul.bnt_tabs li:hover {
+	background: #6b6b6b;
+	color: #ffffff;
+	font-weight: bold;
+}
+
+.tab-content {
+	display: none;
+	background: #ededed;
+	padding: 15px;
+}
+
+.tab-content.current {
+  background: #ededed;
+	display: block;
+}
+
+modal-content .pop_head {
+	display: block;
+	margin: 0px;
+	padding: 0 20px;
+	color: #fff;
+	background: #997149;
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    padding: 5px 12px;
+}
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+button#myBtn {
+  display: block;
+  padding: 20px 50px;
+  margin: 0 auto;
+}
+
+ul.tabs{
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+}
+
+ul.tabs li{
+	background: #ffffff;
+	color: #000000;
+	display: inline-block;
+	padding: 15px 20px;
+	cursor: pointer;
+  font-size: 20px;
+}
+
+ul.tabs li.current{
+	background: #ededed;
+	color: #000000;
+  font-weight: bold;
+}
+
+.tab-content{
+	display: none;
+	background: #ededed;
+	padding: 15px;
+}
+
+.tab-content.current{
+  background: #ededed;
+	display: block;
+}
